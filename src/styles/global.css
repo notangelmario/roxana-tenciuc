@@ -38,7 +38,7 @@
   }
 
   li {
-    @apply list-disc;
+    @apply list-disc ml-8;
   }
 
   li::marker {

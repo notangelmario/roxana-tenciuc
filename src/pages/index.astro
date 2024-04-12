@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/container";
 
 import roxanaHeadTransparentImage from "@/assets/roxana-head-transparent.png";
 import HeadingLines from "@/components/heading-lines.astro";
+import LandingDetails from "@/components/landing-details";
 ---
 
 <Layout>
@@ -12,10 +13,10 @@ import HeadingLines from "@/components/heading-lines.astro";
 		<Image 
 			src={roxanaHeadTransparentImage} 
 			alt="Roxana Tenciuc"
-			class="w-80 h-80 rounded-full border-[1rem] border-background absolute top-16 left-1/2 -translate-x-1/2 object-cover bg-background"
+			class="w-80 h-80 rounded-full border-[1rem] border-background absolute top-8 left-1/2 -translate-x-1/2 object-cover bg-background"
 		/>
 		<div
-			class="h-80 pointer-events-none"
+			class="h-72 pointer-events-none"
 		/>
 		<div class="bg-muted pt-20">
 			<Container className="space-y-2">
@@ -23,10 +24,10 @@ import HeadingLines from "@/components/heading-lines.astro";
 					Cine sunt și de ce candidez
 				</HeadingLines>
 				<h2 class="text-center text-4xl font-bebas uppercase">
-					Sunt Roxana Maria Tenciuc, am 39 de ani<br/>
+					Sunt Roxana Maria Tenciuc, am 39 de ani
 					și candidez la Primăria Ciorogârla.
 				</h2>
-				<ul>
+				<ul class="pt-4">
 					<li>În ultimii 4 ani am fost consilier local, v-am ascultat problemele și le-am prezentat
 						Consiliului Local, pentru a fi rezolvate.
 					</li>
@@ -40,4 +41,7 @@ import HeadingLines from "@/components/heading-lines.astro";
 			<div class=" mt-8 w-full h-8 bg-secondary"/>
 		</div>
 	</div>
+	<Container className="mt-8">
+		<LandingDetails client:load/>
+	</Container>
 </Layout>
