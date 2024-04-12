@@ -1,0 +1,32 @@
+---
+interface Props {
+	img: string;
+	overlayColor: "primary" | "secondary";
+	text: string;
+}
+
+const _ = "bg-primary bg-secondary";
+
+const { props } = Astro;
+---
+
+<div class="relative">
+	<img 
+		src={props.img} 
+		class="h-96 w-full object-cover"
+		style={{
+			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 80%)"
+		}}
+	/>
+	<div
+		class={`absolute inset-0 bg-${props.overlayColor} opacity-60`}
+		style={{
+			clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 80%)"
+		}}
+	/>
+	<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+		<h1 class="text-primary-foreground text-5xl uppercase font-bold text-center">
+			{props.text}
+		</h1>
+	</div>
+</div>

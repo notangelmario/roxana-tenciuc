@@ -1,0 +1,43 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { Image } from "astro:assets";
+import { Container } from "@/components/ui/container";
+
+import roxanaHeadTransparentImage from "@/assets/roxana-head-transparent.png";
+import HeadingLines from "@/components/heading-lines.astro";
+---
+
+<Layout>
+	<div class="relative">
+		<Image 
+			src={roxanaHeadTransparentImage} 
+			alt="Roxana Tenciuc"
+			class="w-80 h-80 rounded-full border-[1rem] border-background absolute top-16 left-1/2 -translate-x-1/2 object-cover bg-background"
+		/>
+		<div
+			class="h-80 pointer-events-none"
+		/>
+		<div class="bg-muted pt-20">
+			<Container className="space-y-2">
+				<HeadingLines>
+					Cine sunt și de ce candidez
+				</HeadingLines>
+				<h2 class="text-center text-4xl font-bebas uppercase">
+					Sunt Roxana Maria Tenciuc, am 39 de ani<br/>
+					și candidez la Primăria Ciorogârla.
+				</h2>
+				<ul>
+					<li>În ultimii 4 ani am fost consilier local, v-am ascultat problemele și le-am prezentat
+						Consiliului Local, pentru a fi rezolvate.
+					</li>
+					<li>
+						Candidez pentru Primăria Ciorogârla pentru că îmi doresc să pun în aplicare proiectele
+						pe care le-am inițiat și să facem din Ciorogârla și Darvari acasă, așa cum ne dorim, cu
+						respect și cu oameni uniți, așa cum eram odată.
+					</li>
+				</ul>
+			</Container>
+			<div class=" mt-8 w-full h-8 bg-secondary"/>
+		</div>
+	</div>
+</Layout>
