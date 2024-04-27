@@ -1,16 +1,26 @@
 ---
 import { Button } from "./ui/button";
 
+const isAtRoot = Astro.url.pathname === "/";
 ---
 
-<nav class="w-full fixed flex flex-row space-x-2 z-50">
+<nav class="w-full fixed flex flex-row space-x-2 z-50 p-2 overflow-x-auto bg-background shadow-sm">
+	{!isAtRoot ?
+		<a href="/">
+			<Button variant="link">
+				Acasă
+			</Button>
+		</a>
+	: null}
 	<div class="w-full"></div>
 	<Button variant="link" disabled>
 		Despre mine
 	</Button>
-	<Button variant="link" disabled>
-		Programa
-	</Button>
+	<a href="/programa">
+		<Button variant="link">
+			Programa
+		</Button>
+	</a>
 	<Button variant="link" disabled>
 		Echipa
 	</Button>

@@ -7,7 +7,7 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
   ({ className, ...props }, ref) => {
     return (
       <div
-        className={cn("max-w-screen-md px-4 mx-auto", className)}
+        className={cn("max-w-screen-lg px-4 mx-auto", className)}
         ref={ref}
         {...props}
       />

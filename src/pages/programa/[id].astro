@@ -1,0 +1,35 @@
+---
+import { Container } from "@/components/ui/container";
+import Layout from "@/layouts/layout.astro"
+import { CollectionEntry, getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+	const projectEntries = await getCollection("programa");
+	
+	return projectEntries.map((entry) => ({
+		params: {
+			id: entry.id.split(".")[1],
+		},
+		props: {
+			entry
+		}
+	}));
+}
+
+interface Props {
+	entry: CollectionEntry<"programa">;
+}
+
+const { entry } = Astro.props;
+
+const { Content } = await entry.render();
+
+---
+
+<Layout>
+	<Container>
+		<div class="prose max-w-none prose-h1:font-bebas prose-h1:text-6xl prose-h1:uppercase prose-h1:font-normal">
+			<Content />
+		</div>
+	</Container>
+</Layout>

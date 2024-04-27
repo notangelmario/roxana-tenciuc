@@ -1,0 +1,46 @@
+---
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Container } from "@/components/ui/container";
+import Layout from "@/layouts/layout.astro"
+import { getCollection } from "astro:content";
+
+const programaCollection = await getCollection("programa");
+// Render all the posts
+// Each has an async render() function
+// programaCollection is an array of objects with the shape { render: Promise<() => string> }
+
+const programaList = await Promise.all(
+	programaCollection.map(async (programa) => {
+		return {
+			icon: programa.data.icon,
+			id: programa.id.split(".")[1],
+			...await programa.render()
+		};
+	})
+);
+---
+
+<Layout>
+	<Container>
+		<h1 class="font-bebas text-6xl uppercase">
+			Ce vrem sa facem?
+		</h1>
+
+		<p class="text-lg">
+			Afla mai multe despre programele noastre.
+		</p>
+
+		{programaList.map((programa) => (
+			<a href={`/programa/${programa.id}`}>
+				<Card>
+					<CardHeader className="flex flex-row items-center space-x-2">
+						<span class="material-symbols-outlined">
+							{programa.icon}
+						</span>
+						<CardTitle>{programa.headings[0].text}</CardTitle>
+					</CardHeader>
+				</Card>
+			</a>
+		))}
+	</Container>
+</Layout>
