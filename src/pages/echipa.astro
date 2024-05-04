@@ -1,0 +1,40 @@
+---
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Container } from "@/components/ui/container";
+import Layout from "@/layouts/layout.astro"
+
+interface TeamMember {
+	name: string;
+	subtitle: string;
+	photoUrl: string;
+	description: string;
+}
+
+const team: TeamMember[] = [
+];
+---
+
+<Layout>
+	<Container>
+		<h1 class="font-bebas text-6xl uppercase">
+			Echipa
+		</h1>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			{team.map((member) => (
+				<Card>
+					<img 
+						src={member.photoUrl} 
+						alt={member.name} 
+						class="mx-auto rounded-full mt-4 mx-auto"
+					/>
+					<CardHeader className="text-center">
+						<CardTitle>{member.name}</CardTitle>
+						<CardDescription>{member.subtitle}</CardDescription>
+						<CardDescription>{member.description}</CardDescription>
+					</CardHeader>
+				</Card>
+			))}
+		</div>
+	</Container>
+</Layout>
