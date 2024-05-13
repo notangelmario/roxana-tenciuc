@@ -2,7 +2,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./
 
 export default function LandingDetails() {
 	return (
-		<Accordion type="single" collapsible>
+		<Accordion type="multiple">
 			<AccordionItem value="1">
 				<AccordionTrigger>Siguranță pentru noi toți</AccordionTrigger>
 				<AccordionContent>

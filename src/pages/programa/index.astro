@@ -30,17 +30,21 @@ const programaList = await Promise.all(
 			Afla mai multe despre programele noastre.
 		</p>
 
-		{programaList.map((programa) => (
-			<a href={`/programa/${programa.id}`}>
-				<Card>
-					<CardHeader className="flex flex-row items-center space-x-2">
-						<span class="material-symbols-outlined">
-							{programa.icon}
-						</span>
-						<CardTitle>{programa.headings[0].text}</CardTitle>
-					</CardHeader>
-				</Card>
-			</a>
-		))}
+		<hr class="border-secondary border-4 w-2/5" />
+
+		<div class="mt-4 p-1 bg-primary flex flex-col gap-1">
+			{programaList.map((programa) => (
+				<a href={`/programa/${programa.id}`}>
+					<Card>
+						<CardHeader className="flex flex-row items-center space-x-2">
+							<span class="material-symbols-outlined">
+								{programa.icon}
+							</span>
+							<CardTitle>{programa.headings[0].text}</CardTitle>
+						</CardHeader>
+					</Card>
+				</a>
+			))}
+		</div>
 	</Container>
 </Layout>
