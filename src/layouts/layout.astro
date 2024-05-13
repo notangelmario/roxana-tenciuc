@@ -2,6 +2,14 @@
 import Navbar from "@/components/navbar.astro";
 import "@/styles/global.css";
 import { ViewTransitions } from "astro:transitions";
+import roxanaHead from "@/assets/roxana-head.png";
+import { getImage } from "astro:assets";
+
+const favIcon = await getImage({
+	src: roxanaHead,
+	width: 32,
+	height: 32
+})
 ---
 
 <html lang="en">
@@ -9,6 +17,7 @@ import { ViewTransitions } from "astro:transitions";
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" href={favIcon.src} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
