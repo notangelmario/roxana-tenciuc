@@ -13,9 +13,11 @@ const isAtRoot = Astro.url.pathname === "/";
 		</a>
 	: null}
 	<div class="w-full"></div>
-	<Button variant="link" disabled>
-		Despre mine
-	</Button>
+	<a href="/despre-mine">
+		<Button variant="link">
+			Despre mine
+		</Button>
+	</a>
 	<a href="/programa">
 		<Button variant="link">
 			Programa
