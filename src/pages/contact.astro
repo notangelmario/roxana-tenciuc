@@ -1,7 +1,22 @@
 ---
 import { Container } from "@/components/ui/container";
 import Layout from "@/layouts/layout.astro"
+import { Image } from "astro:assets";
+import walking1Image from "@/assets/photos/walking1.jpeg";
+import walking2Image from "@/assets/photos/walking2.jpeg";
+import walking3Image from "@/assets/photos/walking3.jpeg";
+import walking4Image from "@/assets/photos/walking4.jpeg";
+import walking5Image from "@/assets/photos/walking5.jpeg";
+import walking6Image from "@/assets/photos/walking6.jpeg";
 
+const images = [
+	walking1Image,
+	walking2Image,
+	walking3Image,
+	walking4Image,
+	walking5Image,
+	walking6Image,
+];
 ---
 
 <Layout>
@@ -11,7 +26,7 @@ import Layout from "@/layouts/layout.astro"
 		</h1>
 
 		<div class="flex flex-col">
-			<p>
+			<p class="text-2xl">
 				Ma puteti contacta prin adresa de email
 				<a href="mailto:roxanamtenciuc@gmail.com" class="hover:underline text-primary">
 					roxanamtenciuc@gmail.com
@@ -21,6 +36,16 @@ import Layout from "@/layouts/layout.astro"
 					+40 755 0124 72
 				</a>
 			</p>
+		</div>
+
+		<div class="mt-8 grid grid-cols-2 lg:grid-cols-3 gap-4">
+			{images.map((image, index) => (
+				<Image 
+					src={image} 
+					alt={`Walking image ${index + 1}`} 
+					class="w-full h-full object-cover rounded-lg"
+				/>
+			))}
 		</div>
 	</Container>
 </Layout>
