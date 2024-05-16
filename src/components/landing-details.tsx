@@ -35,7 +35,7 @@ export default function LandingDetails() {
 						<li>Primul festival pentru copiii din Ciorogârla şi Dârvari</li>
 						<li>Am deschis locurile dejoacă în pandemie</li>
 						<li>Am amenajat locul dejoaca de la Gradinița Ciorogârla şi am reparat parcul de la Şcoală</li>
-						<li>Sprijin pentru învațământul Dual la Liceul Pamfil Şeicaru, prin punerea pe ordineade zi a solicitării de lamediul de afaceri</li>
+						<li>Sprijin pentru învațământul Dual la Liceul Pamfil Şeicaru, prin punerea pe ordinea de zi a solicitării de la mediul de afaceri</li>
 					</ul>
 				</AccordionContent>
 			</AccordionItem>
