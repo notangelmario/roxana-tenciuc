@@ -11,7 +11,7 @@ export default function LandingDetails() {
 						<li>Limitatoare pe străzile comunale - proiect implementat greşit, fără respectarea indicatorilor;</li>
 						<li>Stâlpișori reflectorizanti pe marginea drumului Județean, pentru siguranța pietonilor;</li>
 						<li>Fără gunoi lângă casă - 3700 semnături în 10 zile, un proces colectiv şi o hotărâre de Consiliu Județean anulată, împreună;</li>
-						<li>Campanii de sterilizări cu sprijinul asociațiilor de profil, dar şi cus prijinul consiliului local.</li>
+						<li>Campanii de sterilizări cu sprijinul asociațiilor de profil, dar şi cu sprijinul consiliului local.</li>
 					</ul>
 				</AccordionContent>
 			</AccordionItem>
